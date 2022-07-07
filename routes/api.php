@@ -28,9 +28,9 @@ Route::group([
         "prefix" => "v1",
         'as' => 'v1.'
     ], function () {
-        Route::post('register', [\App\Http\Controllers\Auth\v1\AuthController::class, 'register'])->name('register');
-        Route::post('login', [\App\Http\Controllers\Auth\v1\AuthController::class, 'login'])->name('login');
-        Route::middleware('auth:sanctum')->post('logout', [\App\Http\Controllers\Auth\v1\AuthController::class, 'logout'])->name('logout');
+        Route::post('register', [\App\Http\Controllers\API\Auth\v1\AuthController::class, 'register'])->name('register');
+        Route::post('login', [\App\Http\Controllers\API\Auth\v1\AuthController::class, 'login'])->name('login');
+        Route::middleware('auth:sanctum')->post('logout', [\App\Http\Controllers\API\Auth\v1\AuthController::class, 'logout'])->name('logout');
     });
 
 });
