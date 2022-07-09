@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 //Controllers namespace
-use App\Http\Controllers\API\Auth\v1\AuthController;
+use App\Http\Controllers\API\Auth\v0\AuthController;
 
 
 /*
@@ -29,8 +29,8 @@ Route::group([
 ], function () {
 //    Version 1
     Route::group([
-        "prefix" => "v1",
-        'as' => 'v1.'
+        "prefix" => "v0",
+        'as' => 'v0.'
     ], function () {
         Route::post('register', [AuthController::class, 'register'])->name('register');
         Route::post('login', [AuthController::class, 'login'])->name('login');
