@@ -29,7 +29,9 @@ Route::group([
 ], function () {
 //    http://localhost:8000/api/products
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
+//    http://localhost:8000/api/products/{product_id}
     Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
+//    http://localhost:8000/api/products
     Route::post('/', [ProductController::class, 'store'])->name('products.store');
 });
 
