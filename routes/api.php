@@ -14,8 +14,11 @@ Route::group([
     "prefix" => "auth",
     'as' => 'api.auth.'
 ], function () {
+    //    http://localhost:8000/api/auth/register
     Route::post('register', [AuthController::class, 'register'])->name('register');
+//    http://localhost:8000/api/auth/login
     Route::post('login', [AuthController::class, 'login'])->name('login');
+//    http://localhost:8000/api/auth/logout
     Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout'])->name('logout');
 });
 // Products
@@ -26,6 +29,7 @@ Route::group([
 ], function () {
 //    http://localhost:8000/api/products
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
     Route::post('/', [ProductController::class, 'store'])->name('products.store');
 });
 
