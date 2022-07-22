@@ -32,7 +32,8 @@ Route::group([
 //    http://localhost:8000/api/products/{product_id}
     Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
 //    http://localhost:8000/api/products
-    Route::post('/', [ProductController::class, 'store'])->name('products.store');
+    Route::post('/store', [ProductController::class, 'store'])->name('products.store');
+    Route::post('/destroy/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
 
