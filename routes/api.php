@@ -18,8 +18,12 @@ Route::group([
     Route::post('register', [AuthController::class, 'register'])->name('register');
 //    http://localhost:8000/api/auth/login
     Route::post('login', [AuthController::class, 'login'])->name('login');
+    Route::group(function (){
 //    http://localhost:8000/api/auth/logout
-    Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout'])->name('logout');
+        Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+//    http://localhost:8000/api/auth/user
+        Route::post('user', [AuthController::class, 'user'])->name('user');
+    })->middleware('auth:sanctum');
 });
 // Products
 Route::group([
