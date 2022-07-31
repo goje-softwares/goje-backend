@@ -39,15 +39,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: crbosmkkek
+                  example: htkisxlxatqdqwmvvzmtycpnygvnevcvqjfydrbcwybsnenxrkrygwaxhzoxuqrleuowowkmljmflhi
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: lioenxyjhhcrtjbemfzvexymckojyajuqashkjbsmeqzikimtrpcmssmuwewggitkcsfweazkilonjzyqmdbjzcpushfbrozahsbunwkxkjytuvxdyhsbua
+                  example: lspmunslmjqcbcwrrmgevpbntbvqosowvambngpjcpiywnqmxrsjpoalqusufigphthjafhbsxmvktwryydofrsbujzvwehsemxdfrcngdcnowpniaxjersadgvjbitqvsguzyszd
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: z
+                  example: ttypfdgq
               required:
                 - name
                 - email
@@ -165,11 +165,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: piobnofxoneoqkkcivgechagyiqzejuhxmsmnhcfpfisfniokzqzxsvjacakmqmchpqndifvqqmbzggwcuqxjkkordxvxuowfwnvvuufzwszdrpyhhdpctanzlxdshcpfaqrbfqgdsnutgpfptaljgnl
+                  example: wizznpriiyqnfygapidoddmwcowxxxxorjkzrtlfgoarlrekhlfiafwypjcfgsnfjvsffygvsypfegtrwaqujmtjafelygvhiskvgzwnfabbieuhbfzaqmghuejdessnccnbcmqkbrpkolyyennalufxzbhptuaanwnzswnrmzdzjqqyfhoshnczyygnhrgxalfvcilrswmhmbfoqfjpfgylgteialstmhopcqi
                 price:
                   type: integer
                   description: 'Must be at least 2. Must not be greater than 255.'
-                  example: 18
+                  example: 55
               required:
                 - name
       security: []

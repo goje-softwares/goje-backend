@@ -36,9 +36,11 @@ class ProductController extends Controller
 
     }
 
-    public function store(storeProductRequest $product)
+    public function store(StoreProductRequest $product)
     {
-
+        $user = auth()->user();
+        $newProduct = new Product();
+        return $newProduct->create($product);
     }
 
     public function edit(Product $product)
@@ -49,6 +51,25 @@ class ProductController extends Controller
     public function update(StoreProductRequest $product)
     {
 
+    }
+
+    /**
+     * @param Product $product
+     *
+     */
+
+    public function destroy(Product $product)
+    {
+        if ($product->user_id !== auth()->id()) {
+            return abort(403);
+        };
+
+        $product->deleteOrFail();
+
+        return response()->json([
+            'success',
+            'message' => 'محصول مورد نظر شما با موفقیت حذف شد.'
+        ]);
     }
 
 

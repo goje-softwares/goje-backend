@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "6624589c-a017-4243-a41a-68346b61023b",
+        "_postman_id": "b40d1da9-d95a-47d6-987a-af96ea5f3af7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"crbosmkkek\",\"email\":\"lioenxyjhhcrtjbemfzvexymckojyajuqashkjbsmeqzikimtrpcmssmuwewggitkcsfweazkilonjzyqmdbjzcpushfbrozahsbunwkxkjytuvxdyhsbua\",\"password\":\"z\"}"
+                            "raw": "{\"name\":\"htkisxlxatqdqwmvvzmtycpnygvnevcvqjfydrbcwybsnenxrkrygwaxhzoxuqrleuowowkmljmflhi\",\"email\":\"lspmunslmjqcbcwrrmgevpbntbvqosowvambngpjcpiywnqmxrsjpoalqusufigphthjafhbsxmvktwryydofrsbujzvwehsemxdfrcngdcnowpniaxjersadgvjbitqvsguzyszd\",\"password\":\"ttypfdgq\"}"
                         },
                         "description": "",
                         "auth": {
@@ -232,7 +232,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"piobnofxoneoqkkcivgechagyiqzejuhxmsmnhcfpfisfniokzqzxsvjacakmqmchpqndifvqqmbzggwcuqxjkkordxvxuowfwnvvuufzwszdrpyhhdpctanzlxdshcpfaqrbfqgdsnutgpfptaljgnl\",\"price\":18}"
+                            "raw": "{\"name\":\"wizznpriiyqnfygapidoddmwcowxxxxorjkzrtlfgoarlrekhlfiafwypjcfgsnfjvsffygvsypfegtrwaqujmtjafelygvhiskvgzwnfabbieuhbfzaqmghuejdessnccnbcmqkbrpkolyyennalufxzbhptuaanwnzswnrmzdzjqqyfhoshnczyygnhrgxalfvcilrswmhmbfoqfjpfgylgteialstmhopcqi\",\"price\":55}"
                         },
                         "description": "",
                         "auth": {
