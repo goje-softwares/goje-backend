@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,12 +19,15 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+//        $user = (new User());
+//
+//        return $user->to;
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8'
         ]);
-
         if ($validator->fails()) {
             return response()->json($validator->errors());
         }
@@ -35,13 +39,18 @@ class AuthController extends Controller
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
+        $user->token = $token;
+        return new UserResource($user);
 
-        return response()
-            ->json([
-                'data' => $user,
-                'access_token' => $token,
-                'token_type' => 'Bearer',
-            ]);
+    }
+
+    public function user()
+    {
+        $user = request()->bearerToken();
+
+        return $user;
+
+        return new UserResource($user);
     }
 
     public function login(Request $request)
@@ -54,14 +63,9 @@ class AuthController extends Controller
         $user = User::where('email', $request['email'])->firstOrFail();
 
         $token = $user->createToken('auth_token')->plainTextToken;
+        $user->token = $token;
+        return new UserResource($user);
 
-        return response()
-            ->json([
-                'message' => 'Hi ' . $user->name . ',
-                 welcome to home',
-                'access_token' => $token,
-                'token_type' => 'Bearer',
-            ]);
     }
 
     public function logout()

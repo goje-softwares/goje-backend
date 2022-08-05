@@ -15,15 +15,21 @@ Route::group([
     'as' => 'api.auth.'
 ], function () {
     //    http://localhost:8000/api/auth/register
-    Route::post('register', [AuthController::class, 'register'])->name('register');
-//    http://localhost:8000/api/auth/login
-    Route::post('login', [AuthController::class, 'login'])->name('login');
-    Route::group(function (){
+    Route::post('register', [AuthController::class, 'register'])
+        ->name('register');
+//    http://localhost:\8000/api/auth/login
+    Route::post('login', [AuthController::class, 'login'])
+        ->name('login');
+    Route::group([
+        'middleware' => ['auth:sanctum'],
+    ], function (){
 //    http://localhost:8000/api/auth/logout
-        Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+        Route::post('logout', [AuthController::class, 'logout'])
+            ->name('logout');
 //    http://localhost:8000/api/auth/user
-        Route::post('user', [AuthController::class, 'user'])->name('user');
-    })->middleware('auth:sanctum');
+        Route::get('user', [AuthController::class, 'user'])
+            ->name('user');
+    });
 });
 // Products
 Route::group([
@@ -32,12 +38,16 @@ Route::group([
     'as' => 'api.products.'
 ], function () {
 //    http://localhost:8000/api/products
-    Route::get('/', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/', [ProductController::class, 'index'])
+        ->name('products.index');
 //    http://localhost:8000/api/products/{product_id}
-    Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('/{product}', [ProductController::class, 'show'])
+        ->name('products.show');
 //    http://localhost:8000/api/products
-    Route::post('/store', [ProductController::class, 'store'])->name('products.store');
-    Route::post('/destroy/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+    Route::post('/store', [ProductController::class, 'store'])
+        ->name('products.store');
+    Route::post('/destroy/{product}', [ProductController::class, 'destroy'])
+        ->name('products.destroy');
 });
 
 

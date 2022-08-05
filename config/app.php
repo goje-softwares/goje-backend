@@ -68,6 +68,11 @@ return [
     */
 
     'timezone' => 'UTC',
+    'cookies_domain' => explode(',', env('COOKIES_DOMAIN', sprintf(
+        '%s%s',
+        'goje-software.ir,localhost,localhost:3000,localhost:5173,127.0.0.1,127.0.0.1:8000,::1',
+        env('APP_URL') ? ',' . parse_url(env('APP_URL'), PHP_URL_HOST) : ''
+    ))),
 
     /*
     |--------------------------------------------------------------------------
