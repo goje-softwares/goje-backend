@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::any('/action/{actionName}', \App\Http\Controllers\ActionController::class)->name('actionController');

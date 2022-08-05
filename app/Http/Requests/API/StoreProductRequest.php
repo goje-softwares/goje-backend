@@ -25,7 +25,7 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'name'=>'required|string|min:2|max:255',
-            'price'=>'integer|min:2|max:255'
+            'price'=>'integer'
         ];
     }
 }

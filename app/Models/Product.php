@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method create(\App\Http\Requests\API\StoreProductRequest $product)
+ */
 class Product extends Model
 {
     use HasFactory;
@@ -15,6 +18,7 @@ class Product extends Model
         'slug',
         'amount',
         'weight',
+        'price',
         'status',
         'description'
     ];
