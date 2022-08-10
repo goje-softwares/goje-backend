@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\API\StoreProductRequest;
 use App\Models\Product;
 use App\Models\User;
+use Illuminate\Support\Facades\Request;
 
 class ProductController extends Controller
 {
@@ -39,8 +40,13 @@ class ProductController extends Controller
     public function store(StoreProductRequest $product)
     {
         $user = auth()->user();
-        $newProduct = new Product();
-        return $newProduct->create($product);
+        return Product::create([
+            'name' => $product->name,
+            'slug' => $product->slug,
+            'price' => $product->price,
+            'description' => $product->description,
+            'user_id' => $user->id,
+        ]);
     }
 
     public function edit(Product $product)
