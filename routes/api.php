@@ -46,7 +46,7 @@ Route::group([
 //    http://localhost:8000/api/products
     Route::post('/store', [ProductController::class, 'store'])
         ->name('products.store');
-    Route::post('/destroy/{product}', [ProductController::class, 'destroy'])
+    Route::delete('/destroy/{product}', [ProductController::class, 'destroy'])
         ->name('products.destroy');
 });
 
