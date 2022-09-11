@@ -44,6 +44,7 @@ class ProductController extends Controller
             'name' => $product->name,
             'slug' => $product->slug,
             'price' => $product->price,
+            'amount' => $product->amount,
             'description' => $product->description,
             'user_id' => $user->id,
         ]);
